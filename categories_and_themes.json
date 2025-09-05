@@ -1,0 +1,17 @@
+{
+  "categories": [
+    "Platformer", "Puzzle", "Strategy", "Simulation", "Adventure",
+    "Survival", "Rogue-like", "Arcade", "Narrative", "Metroidvania",
+    "Tactics", "Idle/Incremental", "Rhythm", "Physics", "Co-op",
+    "Competitive", "Sandbox", "Builder", "Stealth", "Horror"
+  ],
+  "themes": [
+    "Out of Control", "Only One", "You Are the Power", "Beneath the Surface",
+    "Growing and Shrinking", "Keep It Alive", "Everything Is Connected",
+    "Limited Space", "Unlikely Allies", "Fragile", "From Nothing",
+    "You Are Not Alone", "Chain Reaction", "Shifting Realities",
+    "Duality", "Time Loop", "Break the Rules", "One Rule",
+    "Lost and Found", "Against the Clock", "Echoes", "Fusion"
+  ]
+}
+

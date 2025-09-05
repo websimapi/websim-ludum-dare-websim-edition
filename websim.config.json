@@ -1,0 +1,30 @@
+{
+  "database": {
+    "schema": {
+      "event": {
+        "id": { "type": "text", "description": "YYYYMMDD key for the daily event" },
+        "category": { "type": "text", "description": "Daily category" },
+        "theme": { "type": "text", "description": "Daily theme" },
+        "seed_meta": { "type": "jsonb", "description": "JSON metadata about how this was generated" },
+        "history": { "type": "jsonb", "description": "Append-only history log" },
+        "created_at": { "type": "timestamptz", "description": "Auto set by platform" }
+      },
+      "jam_entry": {
+        "id": { "type": "text", "description": "Primary key set to user_id. One row per user." },
+        "profile": { "type": "jsonb", "description": "User profile and preferences data as JSON" },
+        "submissions": { "type": "jsonb", "description": "Map of event_id -> { title, url, description, updated_at }" },
+        "history": { "type": "jsonb", "description": "Append-only history of entry changes (blockchain-like)" },
+        "backup_ts": { "type": "timestamptz", "description": "Last time local backup sync was performed" },
+        "created_at": { "type": "timestamptz", "description": "Auto set by platform" }
+      },
+      "upvote": {
+        "id": { "type": "text", "description": "currentUserId-entryUserId-eventId to enforce one upvote per user per entry per event" },
+        "entry_user_id": { "type": "text", "description": "The user id of the entry being upvoted" },
+        "event_id": { "type": "text", "description": "The event id for which the upvote applies" },
+        "created_at": { "type": "timestamptz", "description": "Auto set by platform" }
+      }
+    },
+    "instructions": "Use one jam_entry row per user with JSONB columns. Each submission is stored under submissions[event_id]. Upvotes are unique via the composite id. Daily events are keyed by YYYYMMDD."
+  }
+}
+
